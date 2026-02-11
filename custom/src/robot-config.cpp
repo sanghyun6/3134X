@@ -5,27 +5,36 @@ using signature = vision::signature;
 using code = vision::code;
 
 // A global instance of brain used for printing to the V5 Brain screen
-brain  Brain;
+brain Brain;
 
 // VEXcode device constructors
 controller controller_1 = controller(primary);
 
-// IMPORTANT: Remember to modify the example motors according to the guide. 
+// IMPORTANT: Remember to modify the example motors according to the guide.
 // Also remember to add respective device declarations to custom/include/robot-config.h
 // Format: motor(port, gearSetting, reversed)
 // gearSetting is one of the following: ratio36_1(red), ratio18_1(green), ratio6_1(blue)
 // all chassis motors should be reversed appropriately so that they spin vertical when given a positive voltage input
 // such as driveChassis(12, 12)
-motor left_chassis1 = motor(PORT1, ratio6_1, true);
-motor left_chassis2 = motor(PORT2, ratio6_1, true);
-motor left_chassis3 = motor(PORT3, ratio6_1, false);
+motor left_chassis1 = motor(PORT20, ratio6_1, true);
+motor left_chassis2 = motor(PORT14, ratio6_1, false);
+motor left_chassis3 = motor(PORT13, ratio6_1, true);
 motor_group left_chassis = motor_group(left_chassis1, left_chassis2, left_chassis3);
-motor right_chassis1 = motor(PORT4, ratio6_1, false);
-motor right_chassis2 = motor(PORT5, ratio6_1, false);
-motor right_chassis3 = motor(PORT6, ratio6_1, true);
+motor right_chassis1 = motor(PORT15, ratio6_1, false);
+motor right_chassis2 = motor(PORT4, ratio6_1, true);
+motor right_chassis3 = motor(PORT12, ratio6_1, false);
 motor_group right_chassis = motor_group(right_chassis1, right_chassis2, right_chassis3);
 
-inertial inertial_sensor = inertial(PORT7);
+// intake
+motor lower_intake = motor(PORT16, ratio6_1, true);
+motor upper_intake = motor(PORT10, ratio6_1, true);
+
+// matix
+digital_out matchloader = digital_out(Brain.ThreeWirePort.F);
+digital_out middle = digital_out(Brain.ThreeWirePort.G);
+digital_out descorer = digital_out(Brain.ThreeWirePort.H);
+
+inertial inertial_sensor = inertial(PORT5);
 optical example_optical_sensor = optical(PORT8);
 distance example_distance_sensor = distance(PORT9);
 digital_out example_piston = digital_out(Brain.ThreeWirePort.A);
@@ -73,7 +82,7 @@ double turn_kp = 0.3, turn_ki = 0, turn_kd = 2.5;
 double heading_correction_kp = 0.6, heading_correction_ki = 0, heading_correction_kd = 4;
 
 // Enable or disable the use of tracking wheels
-bool using_horizontal_tracker = false;  // Set to true if a horizontal tracking wheel is installed and used for odometry
+bool using_horizontal_tracker = false; // Set to true if a horizontal tracking wheel is installed and used for odometry
 bool using_vertical_tracker = false;   // Set to true if a vertical tracking wheel is installed and used for odometry
 
 // IGNORE THESE IF YOU ARE NOT USING TRACKING WHEELS
@@ -83,7 +92,7 @@ double horizontal_tracker_dist_from_center = 2.71875;
 // Horizontal distance from the center of the bot to the vertical tracking wheel (in inches, positive is when the wheel is to the right of the center)
 double vertical_tracker_dist_from_center = -0.03125;
 double horizontal_tracker_diameter = 1.975; // Diameter of the horizontal tracker wheel (in inches)
-double vertical_tracker_diameter = 1.975; // Diameter of the vertical tracker wheel (in inches)
+double vertical_tracker_diameter = 1.975;   // Diameter of the vertical tracker wheel (in inches)
 
 // Distance Reset setup
 // Set all of these values to the distance from the respective distance sensor to the robot's center along the axis it faces(in inches)
@@ -106,8 +115,8 @@ double back_sensor_offset = 0.0;
 bool heading_correction = true; // Use heading correction when the bot is stationary
 
 // Set to true for more accuracy and smoothness, false for more speed
-bool dir_change_start = true;   // Less accel/decel due to expecting direction change at start of movement
-bool dir_change_end = true;     // Less accel/decel due to expecting direction change at end of movement
+bool dir_change_start = true; // Less accel/decel due to expecting direction change at start of movement
+bool dir_change_end = true;   // Less accel/decel due to expecting direction change at end of movement
 
 double min_output = 10; // Minimum output voltage to motors while chaining movements
 
@@ -132,9 +141,10 @@ bool RemoteControlCodeEnabled = true;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
- * 
+ *
  * This should be called at the start of your int main function.
  */
-void vexcodeInit(void) {
+void vexcodeInit(void)
+{
   // nothing to initialize
 }

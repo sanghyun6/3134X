@@ -25,6 +25,16 @@ extern distance left_sensor;
 extern distance right_sensor;
 extern distance back_sensor;
 
+// lee's extern
+extern motor upper_intake;
+extern motor lower_intake;
+extern digital_out matchloader;
+extern digital_out middle;
+extern digital_out descorer;
+extern digital_out matchloader_state;
+extern digital_out middle_state;
+extern digital_out descorer_state;
+
 extern motor arm_motor1;
 extern motor arm_motor2;
 extern motor_group arm_motor;
@@ -50,7 +60,7 @@ extern double vertical_tracker_dist_from_center;
 extern double horizontal_tracker_diameter;
 extern double vertical_tracker_diameter;
 
-// Distance Reset setup 
+// Distance Reset setup
 extern double front_sensor_offset;
 extern double left_sensor_offset;
 extern double right_sensor_offset;
@@ -69,7 +79,7 @@ extern double chase_power;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
- * 
+ *
  * This should be called at the start of your int main function.
  */
 void vexcodeInit(void);
