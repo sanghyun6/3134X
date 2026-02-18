@@ -7,7 +7,7 @@
 
 void runAutonomous()
 {
-  int auton_selected = 4;
+  int auton_selected = 5;
   switch (auton_selected)
   {
   case 1:
@@ -23,6 +23,7 @@ void runAutonomous()
     left_7ball();
     break;
   case 5:
+    right_7ball();
     break;
   case 6:
     break;

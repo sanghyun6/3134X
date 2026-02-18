@@ -239,48 +239,56 @@
 
 void left_7ball()
 {
+  middle.set(true);
   // get 3ball
   descorer.set(true);
   lower_intake.spin(reverse, 100, pct); // keep spins until I stop
-  driveTo(12, 2000, true);              // drive little
+  driveTo(12, 2000, true, 6);           // drive little
   turnToAngle(330, 2000, true);         // turn left little
-  driveTo(12, 2000, true, 9);           // arrive at the ball, wait a bit to take the ball
+  driveTo(16, 2000, true, 6);           // arrive at the ball, wait a bit to take the ball
 
   // go to matchloader
-  turnToAngle(240, 2000, true);
-  driveTo(29, 2000, true);
+  turnToAngle(230, 2000, true);
+  driveTo(30.3, 2000, true, 6);
+
   turnToAngle(177, 2000, true);
   matchloader.set(true);
-  driveTo(21, 4000, true, 11);
-  driveTo(2, 2000, true);
+  driveTo(21, 4000, true, 6); // 4000
+  driveTo(2, 2000, true, 6);
   turnToAngle(180, 2000, true);
   wait(2000, msec);
 
   // go to the longgoal
-  driveTo(-20, 2000, false);
-  lower_intake.spin(reverse, 100, pct);
-  upper_intake.spin(fwd, 100, pct);
+  driveTo(-20, 2000, false, 6);
+  lower_intake.spin(reverse, 150, pct);
+  upper_intake.spin(fwd, 150, pct);
   wait(2000, msec);
 }
 
 void right_7ball()
-{ // get 3ball
+{
+  middle.set(true);
+  // get 3ball
   descorer.set(true);
   lower_intake.spin(reverse, 100, pct); // keep spins until I stop
-  driveTo(12, 2000, true);              // drive little
+  driveTo(12, 2000, true, 6);           // drive little
   turnToAngle(30, 2000, true);          // turn left little
-  driveTo(12, 2000, true, 9);           // arrive at the ball, wait a bit to take the ball
+  driveTo(16, 2000, true, 6);           // arrive at the ball, wait a bit to take the ball
 
   // go to matchloader
-  turnToAngle(120, 2000, true);
-  driveTo(29, 2000, true);
+  turnToAngle(130, 2000, true);
+  driveTo(30.3, 2000, true, 6);
+
   turnToAngle(183, 2000, true);
-  driveTo(23, 4000, true, 12); // 4000
+  matchloader.set(true);
+  driveTo(21, 4000, true, 6); // 4000
+  driveTo(2, 2000, true, 6);
+  turnToAngle(180, 2000, true);
   wait(2000, msec);
 
   // go to the longgoal
-  driveTo(-20, 2000, false);
-  lower_intake.spin(reverse, 100, pct);
-  upper_intake.spin(fwd, 100, pct);
+  driveTo(-20, 2000, false, 6);
+  lower_intake.spin(reverse, 150, pct);
+  upper_intake.spin(fwd, 150, pct);
   wait(2000, msec);
 }
