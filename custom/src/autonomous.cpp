@@ -254,7 +254,6 @@ void left_7ball()
   turnToAngle(177, 2000, true);
   matchloader.set(true);
   driveTo(21, 4000, true, 6); // 4000
-  driveTo(2, 2000, true, 6);
   turnToAngle(180, 2000, true);
   wait(2000, msec);
 
@@ -282,7 +281,6 @@ void right_7ball()
   turnToAngle(183, 2000, true);
   matchloader.set(true);
   driveTo(21, 4000, true, 6); // 4000
-  driveTo(2, 2000, true, 6);
   turnToAngle(180, 2000, true);
   wait(2000, msec);
 
