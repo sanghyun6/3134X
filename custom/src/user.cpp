@@ -7,7 +7,7 @@
 
 void runAutonomous()
 {
-  int auton_selected = 6;
+  int auton_selected = 8;
   switch (auton_selected)
   {
   case 1:
@@ -29,10 +29,13 @@ void runAutonomous()
     newauton();
     break;
   case 7:
+    newnewauton();
     break;
   case 8:
+    left_finalauton();
     break;
   case 9:
+    right_finalauton();
     break;
   }
 }
