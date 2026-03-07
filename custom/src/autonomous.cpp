@@ -54,22 +54,22 @@ void firstball()
 
 void left_finalauton()
 {
-  middle.set(true);
+  middle.set(false);
   // get 3ball
   descorer.set(true);
   lower_intake.spin(reverse, 100, pct); // keep spins until I stop
-  driveTo(25, 2000, true, 6);           // drive little
-  turnToAngle(330, 2000, true);         // turn left little
-  driveTo(16, 2000, true, 3);           // arrive at the ball, wait a bit to take the ball
+  driveTo(25, 1000, true, 6);           // drive little
+  turnToAngle(330, 500, true);          // turn left little
+  driveTo(16, 1000, true, 3);           // arrive at the ball, wait a bit to take the ball
 
   // go to matchloader
-  turnToAngle(230, 2000, true);
-  driveTo(29.7, 2000, true, 6);
+  turnToAngle(230, 1000, true);
+  driveTo(28.5, 1000, true, 6);
 
   // go to the longgoal
-  turnToAngle(180, 2000, true); // prev 175.5
+  turnToAngle(180, 400, true); // prev 175.5
 
-  driveTo(-23, 2000, true, 6);
+  driveTo(-24, 1000, true, 6);
   lower_intake.spin(reverse, 150, pct);
   upper_intake.spin(fwd, 150, pct);
   wait(2000, msec);
@@ -77,34 +77,34 @@ void left_finalauton()
   lower_intake.stop();
   upper_intake.stop();
 
-  driveTo(12, 2000, true, 6);
-  turnToAngle(90, 2000, true);
-  driveTo(8.4, 2000, true, 6);
-  turnToAngle(180, 2000, true);
+  driveTo(12, 500, true, 6);
+  turnToAngle(90, 500, true);
+  driveTo(7.3, 500, true, 6);
+  turnToAngle(180, 500, true);
 
   driveTo(-8, 2000, true, 6);
   descorer.set(false);
-  driveTo(-38, 2000, true, 4);
+  driveTo(-38, 2000, true, 6);
 }
 
 void right_finalauton()
 {
-  middle.set(true);
+  middle.set(false);
   // get 3ball
   descorer.set(true);
   lower_intake.spin(reverse, 100, pct); // keep spins until I stop
-  driveTo(25, 2000, true, 6);           // drive little
-  turnToAngle(30, 2000, true);          // turn left little
+  driveTo(25, 1000, true, 6);           // drive little
+  turnToAngle(30, 500, true);           // turn left little
   driveTo(16, 2000, true, 3);           // arrive at the ball, wait a bit to take the ball
 
   // go to matchloader
-  turnToAngle(130, 2000, true);
-  driveTo(29.7, 2000, true, 6);
+  turnToAngle(130, 1000, true);
+  driveTo(28.5, 1000, true, 6);
 
   // go to the longgoal
-  turnToAngle(180, 2000, true); // prev 175.5
+  turnToAngle(180, 400, true); // prev 175.5
 
-  driveTo(-23, 2000, true, 6);
+  driveTo(-24, 1000, true, 6);
   lower_intake.spin(reverse, 150, pct);
   upper_intake.spin(fwd, 150, pct);
   wait(2000, msec);
@@ -112,14 +112,14 @@ void right_finalauton()
   lower_intake.stop();
   upper_intake.stop();
 
-  driveTo(12, 2000, true, 6);
-  turnToAngle(270, 2000, true);
-  driveTo(8.4, 2000, true, 6);
-  turnToAngle(180, 2000, true);
+  driveTo(12, 500, true, 6);
+  turnToAngle(270, 500, true);
+  driveTo(-7, 500, true, 6);
+  turnToAngle(180, 500, true);
 
-  driveTo(-8, 2000, true, 6);
+  driveTo(-7, 2000, true, 6);
   descorer.set(false);
-  driveTo(-38, 2000, true, 4);
+  driveTo(-38, 2000, true, 6);
 }
 
 void newnewauton()
